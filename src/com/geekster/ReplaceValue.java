@@ -10,7 +10,7 @@ public class ReplaceValue
 		{
 			if(arr[i] == 76)
 			{
-				arr[i] = 10;
+				arr[i] = 0;
 			}
 		}
 		for(int i = 0; i < arr.length; i++)
