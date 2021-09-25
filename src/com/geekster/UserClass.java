@@ -10,55 +10,39 @@ public class UserClass
 	private String userName;
 	private String emailId;
 	
-	//setter methods
-	public void setUserId(int userId)
-	{
+	public UserClass(int userId, long mobileNo, String firstName, String lastName, String userName, String emailId)
+	{	
 		this.userId = userId;
-	}
-	public void setMobileNo(long mobileNo)
-	{
 		this.mobileNo = mobileNo;
-	}
-	public void setFirstName(String firstName)
-	{
 		this.firstName = firstName;
-	}
-	public void setLastName(String lastName)
-	{
 		this.lastName = lastName;
-	}
-	public void setUserName(String userName)
-	{
 		this.userName = userName;
-	}
-	public void setEmailId(String emailId)
-	{
 		this.emailId = emailId;
+		
+		System.out.println(this.userId);
+		System.out.println(this.mobileNo);
+		System.out.println(this.firstName +" "+this.lastName);
+		System.out.println(this.userName);
+		System.out.println(this.emailId);
+		
+	}
+	public UserClass()
+	{
+		this.userId = 0000;
+		this.mobileNo = 000000l;
+		this.firstName = "noName";
+		this.lastName = "nothing";
+		this.userName = "NoUser";
+		this.emailId = "Nothing";
+		
+		System.out.println(this.userId);
+		System.out.println(this.mobileNo);
+		System.out.println(this.firstName +" "+this.lastName);
+		System.out.println(this.userName);
+		System.out.println(this.emailId);
+
 	}
 	
-	//getter methods
-	public int getUserId()
-	{
-		return this.userId;
-	}
-	public long getMobileNo()
-	{
-		return this.mobileNo;
-	}
-	public String getFirstName()
-	{
-		return this.firstName;
-	}
-	public String getLastName()
-	{
-		return this.lastName;
-	}
-	public String getUserName()
-	{
-		return this.userName;
-	}
-	public String getEmailId()
-	{
-		return this.emailId;
-	}
+	
+	
 }
