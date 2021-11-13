@@ -4,7 +4,7 @@ public class SortingZeroOneTwo {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {0,1,2,1,2,0,0,1,2};
+		int[] arr = {0,1,2,1,2,0,0,1,2,1,2,1,2,1,1,2,2,0,0,0,2,2,1,0,2,1,2,2,1,1,2,1,2,1,0,1,2};
 		
 		int start = 0;
 		int end = arr.length-1;
@@ -38,11 +38,11 @@ public class SortingZeroOneTwo {
 						arr[mid] = temp;
 						end--;
 					}
-					if(arr[mid] == 1)
+					else if(arr[mid] == 1)
 					{
 						mid--;
 					}
-					if(arr[mid] == 0)
+					else if(arr[mid] == 0)
 					{
 						int temp = arr[mid];
 						arr[mid] = arr[start];
@@ -59,6 +59,8 @@ public class SortingZeroOneTwo {
 					arr[end] = arr[start];
 					arr[start] = temp;
 					start++;
+					end--;
+					mid--;
 				}
 				else if(arr[end] == 1)
 				{
@@ -66,10 +68,12 @@ public class SortingZeroOneTwo {
 					arr[end] = arr[start];
 					arr[start] = temp;
 					end--;
+					mid--;
 				}
 				else if(arr[end] == 2)
 				{
 					end--;
+					mid--;
 				}
 			}
 		}

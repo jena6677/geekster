@@ -6,7 +6,7 @@ public class MoveZeroToEnd {
 		
 		int arr[] = {1,0,1,0,1,0,1,0,1,0};
 		int start = 0;
-		int end = arr.length-1;
+		int end =  arr.length-1;
 		while(start < end)
 		{
 			if(arr[end] != 0)
