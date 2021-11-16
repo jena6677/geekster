@@ -3,25 +3,26 @@ package com.geekster;
 public class FindTwoNonRepeatingBitwise {
 
 	public static void main(String[] args) {
-		
-		int arr[] = {1,5,8,6,5,1,6,2};
+		int ans1 = 0, ans2 = 0;
+		int sum = 0; 
+		int arr[] = {1,5,3,6,2,1,6,2};
 		for(int i = 0; i < arr.length; i++)
 		{
-			for(int j = i+1; j < arr.length; j++)
-			{
-				if((arr[i] ^ arr[j]) == 0)
-				{
-					arr[i] = 0;
-					arr[j] = 0;
-				}
-			}
+			sum ^= arr[i];
 		}
+		int mask = sum & (~(sum-1));
 		for(int i = 0; i < arr.length; i++)
 		{
-			if(arr[i] != 0)
+			if((arr[i]&mask) == 0)
 			{
-				System.out.println(arr[i]);
+				ans1 = ans1^arr[i];
+			}
+			else
+			{
+				ans2 = ans2 ^ arr[i];
 			}
 		}
+		System.out.println(ans1);
+		System.out.println(ans2);
 	}
 }

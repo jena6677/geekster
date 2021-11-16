@@ -14,7 +14,6 @@ public class MergeSortedArray {
 		}
 		for(int i = arr2.length; i < arr3.length; i++)
 		{
-		
 			arr3[i] = arr[i-4];
 		}
 		for(int i = 0; i < arr3.length; i++)
