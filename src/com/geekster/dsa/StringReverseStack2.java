@@ -8,7 +8,7 @@ public class StringReverseStack2 {
 		
 		Stack<String> stk = new Stack<>();
 		
-		String s = "hii i am a good boy";
+		String s = "   hii i am a good boy";
 		
 		String[] arr = s.split(" ");
 		
