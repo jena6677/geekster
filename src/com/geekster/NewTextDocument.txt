@@ -1,0 +1,82 @@
+1: valid anagram
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length()  != t.length())
+        {
+            return false;
+        }
+        
+        int[] arr = new int[26];
+        int[] arr2 = new int[26];
+        
+        for(int i = 0; i < s.length(); i++)
+        {
+            arr[Math.abs('a' - s.charAt(i))] += 1;
+            arr2[Math.abs('a' - t.charAt(i))] += 1;
+        }
+        for(int i = 0; i < 26; i++)
+        {
+            if(arr[i] != arr2[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+2: Sorting the sentence
+
+class Solution {
+    public String sortSentence(String s) {
+        
+        String[] arr = s.split(" ");
+        String[] arr2 = new String[arr.length];
+        
+        for(int i = 0; i < arr.length; i++)
+        {
+            String k = arr[i];
+            arr2[(k.charAt(k.length()-1)-'0')-1] = k.substring(0,k.length()-1);
+        }
+        String t = "";
+        for(int i = 0; i < arr2.length; i++)
+        {
+            if(i == arr2.length-1)
+            {
+                t+= arr2[i];
+            }
+            else
+            {
+                t += arr2[i]+" ";   
+            }
+        }
+        return t;
+    }
+}
+
+3: find the difference
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int[] arr = new int[26];
+        
+        for(int i = 0; i < s.length(); i++)
+        {
+            arr[Math.abs('a' - s.charAt(i))] += 1;
+        }
+        for(int i = 0; i < t.length(); i++)
+        {
+            arr[Math.abs('a' - t.charAt(i))] += 1;
+        }
+        
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(arr[i]%2 != 0)
+            {
+                return (char)('a'+i);
+            }
+        }
+        return 'n';
+    }
+}
